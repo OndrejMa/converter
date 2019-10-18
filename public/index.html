@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="javascripts/semantic-ui-css/semantic.min.css">
+    <title>Currency Converter</title>
+</head>
+<body>
+<div class="ui container">
+     <div class="ui one item inverted brown menu">
+        <div class="header item">
+            <i class="euro sign icon"></i>
+            Currency Converter
+            <i class="dollar sign icon"></i>
+        </div>
+    </div>
+    <!-- Error Template -->
+    <script id="error-template" type="text/x-handlebars-template">
+        <div class="ui {{color}} inverted segment" style="height:250px;">
+            <br>
+            <h2 class="ui center aligned icon header">
+                <i class="exclamation triangle icon"></i>
+                <div class="content">
+                    {{title}}
+                    <div class="sub header">{{message}}</div>
+                </div>
+            </h2>
+        </div>
+    </script>
+    <!-- Exchange Conversion Template -->
+    <script id="exchange-template" type="text/x-handlebars-template">
+        <div class="ui basic loading segment">
+            <form class="ui form" method="get">
+                <div class="three fields">
+                    <div class="field">
+                        <label>From</label>
+                        <select class="ui dropdown" name="from" id="from">
+                            <option value="">Select Currency</option>
+                            {{#each symbols}}
+                            <option value="{{@key}}">{{this}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>To</label>
+                        <select class="ui dropdown" name="to" id="to">
+                            <option value="">Select Currency</option>
+                            {{#each symbols}}
+                            <option value="{{@key}}">{{this}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>Amount</label>
+                        <input type="number" name="amount" id="amount" placeholder="Enter amount">
+                    </div>
+                </div>
+                <div class="ui inverted brown submit button">Convert</div>
+                <div class="ui error message"></div>
+            </form>
+            <br>
+            <div id="result-segment" class="ui center aligned segment">
+                <h2 id="result" class="ui brown header">
+                    0.00
+                </h2>
+            </div>
+        </div>
+    </script>
+
+    <!-- Application Root -->
+    <div id="app"></div>
+</div>
+
+<!-- JS Library Dependencies -->
+<script src="javascripts/jquery/dist/jquery.min.js"></script>
+<script src="javascripts/semantic-ui-css/semantic.min.js"></script>
+<script src="javascripts/axios/dist/axios.min.js"></script>
+<script src="javascripts/handlebars/dist/handlebars.min.js"></script>
+<script src="javascripts/vanilla-router/dist/vanilla-router.min.js"></script>
+<script src="javascripts/client.js"></script>
+
+
+
+</body>
+</html>

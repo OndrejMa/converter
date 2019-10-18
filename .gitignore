@@ -1,0 +1,4 @@
+# Project exclude paths
+/node_modules/
+/public/javascripts/axios/node_modules/
+/public/javascripts/handlebars/node_modules/
