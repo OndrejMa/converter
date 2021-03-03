@@ -16,7 +16,7 @@
     "http-errors": "~1.6.3",
     "jquery": "^3.4.1",
     "morgan": "~1.9.1",
-    "pug": "2.0.0-beta11",
+    "pug": "3.0.1",
     "semantic-ui-css": "^2.4.1",
     "vanilla-router": "^1.2.7"
   }
